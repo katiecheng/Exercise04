@@ -56,7 +56,7 @@ def inner_four_end(input_list):
     """Return the sixth, fifth, fourth, and third elements from the end of the
     list, in that order.
     """
-    return input_list[2:6:-1]
+    return input_list[-6:-2]
 
 def replace_head(input_list):
     """Replace the head of the input list with the value 42."""
@@ -183,10 +183,32 @@ def custom_reverse(input_list):
 
 def custom_contains(input_list, value):
     """custom_contains(input_list, value) imitates (value in input_list)"""
-    pass
+    contains = False
+    for item in input_list:
+        if item == value:
+            contains = True
+            break
+        else:
+            pass
+    return contains
+
 
 def custom_equality(some_list, another_list):
     """custom_equality(some_list, another_list) imitates
     (some_list == another_list)
     """
-    pass
+    counter = -1
+    is_equal = True
+
+    if custom_len(some_list) == custom_len(another_list):
+        for item in some_list:
+            counter += 1
+            if some_list[counter] == another_list[counter]:
+                pass
+            else:
+                is_equal = False
+                break
+    else: 
+        is_equal = False
+
+    return is_equal
